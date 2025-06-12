@@ -1,0 +1,159 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #696969;
+}
+.cake {
+    position: relative;
+    width: 200px;
+    height: 400px; /* enough to fit all layers */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.plate {
+    height: 0px;
+    width: 200px;
+    border-top: solid 4px antiquewhite;
+    border-radius: 2px;
+    box-shadow: 0 0 10px antiquewhite;
+    position: absolute;
+}
+
+.layer,
+.cream,
+.topping_cream,
+.candle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-1000px);
+    animation: drop 0.6s ease-out forwards;
+}
+
+.layer {
+    height: 10px;
+    width: 150px;
+    border: solid 4px #FFFDD0;
+    background-color: #FFFDD0;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #FFFDD0;
+}
+
+.cream {
+    width: 155px;
+    height: 5px;
+    border: solid 2px #F4A460;
+    background-color: #F4A460;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #F4A460;    
+}
+
+.topping_cream {
+    width: 155px;
+    height: 5px;
+    border: solid 2px #F9F6EE;
+    background-color: #F9F6EE;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #F9F6EE;
+}
+
+.candle {
+    height: 40px;
+    width: 3px;
+    border: solid 2px #FFF8DC;
+    background-color: #FFF8DC;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #FFF8DC;
+}
+
+.candle .flame {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 15px;
+    background: radial-gradient(ellipse at center, orange 0%, gold 60%, transparent 80%);
+    border-radius: 50% 50% 50% 50%;
+    animation: flicker 0.3s infinite alternate;
+    opacity: 0.9;
+    box-shadow: 0 0 15px orange;
+    z-index: 10;
+}
+
+.l1 {
+    top: 380px;
+    animation-delay: 0s;
+}
+
+.c1 {
+    top: 372px;
+    animation-delay: 0.6s;
+}
+
+.l2 {
+    top: 354px;
+    animation-delay: 0.9s;
+}
+
+.c2 {
+    top: 346px;
+    animation-delay: 1.2s;
+}
+
+.l3 {
+    top: 328px;
+    animation-delay: 1.5s;
+}
+
+.t1 {
+    top: 320px;
+    animation-delay: 1.8s;
+}
+
+.ca {
+    top: 278px;
+    animation-delay: 2.1s;
+}
+
+
+@keyframes drop {
+
+    0% {
+        transform: translateX(-50%) translateY(-500px);
+    }
+
+    70% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    85% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes flicker {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(0.95);
+        opacity: 0.7;
+    }
+}
+
